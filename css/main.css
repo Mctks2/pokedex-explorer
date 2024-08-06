@@ -679,7 +679,7 @@ ul {
   color: #7A7D80;
   position: relative;
   top: -3px;
-  margin-left: 8px;
+  margin-left: 0.5rem;
 }
 .modal .box .right-container .type {
   display: -webkit-box;

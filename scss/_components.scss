@@ -688,7 +688,7 @@
           color: #7A7D80;
           position: relative;
           top: -3px;
-          margin-left: 8px;
+          margin-left: 0.5rem; 
         }
       }
       .type {
@@ -698,7 +698,7 @@
         width: 100%;
         margin-bottom: 3.2rem;
         li {
-          &:not(:first-child) {
+          &:not(:first-child) {  
             margin-left: 1rem;
           }
         }
