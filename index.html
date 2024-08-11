@@ -1,47 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <!--======== GOOGLE FONTS ======== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/plugins.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Codeboost - Projeto Pokemon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
 
-    <!--======== IMPORT ======== -->
-    <link rel="stylesheet" href="./css/plugins.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <title>Projeto Pokemon</title>
-  </head>
-  <body>
+<body>
 
-    <!--======== HEADER ======== -->  
   <header>
-      <div class="container">
-        <a href="" class="logo">
-          <img
-            src="img/logo.svg"
-            alt="Logo do Pokemon"
-            title="Logo do Pokemon"
-          />
-        </a>
-        <p>Case Study -> Code<strong>Boost</strong></p>
-      </div>
+    <div class="container">
+      <a href="" class="logo">
+        <img src="img/logo.svg" alt="Logo do Pokemon" title="Logo do Pokemon">
+      </a>
+      <p>Case Study  ->  Code<strong>Boost</strong></p>
+    </div>
   </header>
-    
-  <section class="s-area-slide-hero">
+
+ <section class="s-area-slide-hero">
     <div class="slide-hero">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -108,7 +95,7 @@
     </div>
   </section>
 
-  <!--======== MAIN =========-->
+ 
   <section class="s-all-info-pokemons">
     <div class="container">
       <div class="top">
@@ -121,10 +108,8 @@
         </div>
       </div>
       <div class="area-all">
-
-        <!-- LEFT CONTAINER -->
-
         <div class="left-container">
+
           <ul id="js-type-area">
             <li>
               <button class="type-filter active all" code-type="">
@@ -134,37 +119,17 @@
                 <span>All</span>
               </button>
             </li>
-            <li>
-              <button class="type-filter fighting" code-type="">
-                <div class="icon">
-                  <img src="img/icon-types/fighting.svg" alt="">
-                </div>
-                <span>Fighting</span>
-              </button>
-            </li>
-            <li>
-              <button class="type-filter fire" code-type="">
-                <div class="icon">
-                  <img src="img/icon-types/fire.svg" alt="">
-                </div>
-                <span>Fire</span>
-              </button>
-            </li>
           </ul>
+          
         </div>
-
-        <!-- RIGHT CONTAINER -->
-
         <div class="right-container">
           <div class="top-container">
             <div>
               <img src="img/icon-pokeball.svg" alt="">
-              <span><strong id="js-count-pokemons"> 90 </strong> Pokémons</span>
+              <span><strong id="js-count-pokemons"> - </strong> Pokémons</span>
             </div>
           </div>
-          
-          <!-- SELECT P/ RESOLUCAO MOBILE -->
-          <div class="select-custom"> 
+          <div class="select-custom">
             <button class="item-selected js-open-select-custom">
               <span>Show:</span>
               <strong>All</strong>
@@ -180,22 +145,8 @@
               </li>
             </ul>
           </div>
-
           <div class="all" id="js-list-pokemons">
-            <button class="card-pokemon grass js-open-details-pokemon">
-              <div class="image">
-                <img src="./img/bulbasaur.svg" class="thumb-img">
-              </div>
-              <div class="info">
-                <div class="text">
-                  <span>#001</span>
-                  <h3>Bulbasaur</h2>
-                </div>
-                <div class="icon">
-                  <img src="img/icon-types/grass.svg">
-                </div>
-              </div>
-            </button>
+            
           </div>
           <button class="btn-load-more" id="js-btn-load-more">Load more Pokémons</button>
         </div>
@@ -203,7 +154,21 @@
     </div>
   </section>
 
-  <!--========  MODAL =========-->
+  
+  <footer>
+    <div class="container">
+      <div class="text">
+        <h3>Módulo JavaScript</h3>
+        <p>Consumindo e exibindo dados de uma API</p>
+      </div>
+      <a href="https://codeboost.com.br" target="_blank">
+        <img src="img/codeboost.svg" alt="">
+      </a>
+    </div>
+  </footer>
+
+
+
   <div class="modal" type-pokemon-modal="grass" id="js-modal-details">
     <div class="overlay"></div>
     <div class="box">
@@ -215,21 +180,16 @@
           <img src="img/icon-types/grass.svg" id="js-image-type-modal" alt="">
         </div>
         <div class="image">
-          <img src="img/bulbasaur.svg" alt="" id="js-image-pokemon-modal">
+          <img src="" alt="" id="js-image-pokemon-modal">
         </div>
       </div>
       <div class="right-container">
         <div class="name">
-          <h2 id="js-name-pokemon-modal">Bulbasaur</h2>
-          <span id="js-code-pokemon-modal">#001</span>
+          <h2 id="js-name-pokemon-modal"></h2>
+          <span id="js-code-pokemon-modal"></span>
         </div>
         <ul class="type" id="js-types-pokemon">
-          <li>
-            <span class="tag-type fire">Fire</span>
-          </li>
-          <li>
-            <span class="tag-type poison">Poison</span>
-          </li>
+          
         </ul>
         <ul class="info">
           <li>
@@ -249,10 +209,7 @@
           <h4>Weaknesses</h4>
           <ul id="js-area-weak">
             <li>
-              <span class="tag-type water">Water</span>
-            </li>
-            <li>
-              <span class="tag-type electric">Electric</span>
+              <span class="tag-type fire">Fire</span>
             </li>
           </ul>
         </div>
@@ -338,9 +295,8 @@
   </div>
 
 
+  <script src="js/plugins.js"></script>
+  <script src="js/all.js"></script>
+</body>
 
-    <!-- ========= JS ========== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/all.js"></script>
-  </body>
 </html>
