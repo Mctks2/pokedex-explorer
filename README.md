@@ -20,6 +20,7 @@ o usuário é direcionado para uma nova página que exibe informações detalhad
 - Nodejs
 - Gulp
 - API (https://pokeapi.co/)
+- Biblioteca Swiper JS
 
 ## 🙏 Reconhecimentos 
   
