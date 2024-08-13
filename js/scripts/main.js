@@ -1,8 +1,8 @@
-// scripts do slide principal
+// Configuração do carrossel principal usando Swiper
 var slide_hero = new Swiper(".slide-hero", {
-  effect: 'fade',
+  effect: 'fade', // Efeito de transição entre slides
   pagination: {
-    el: ".slide-hero .main-area .area-explore .swiper-pagination",
+    el: ".slide-hero .main-area .area-explore .swiper-pagination", // Localização da paginação
   },
 });
 
@@ -10,32 +10,34 @@ const cardPokemon  = document.querySelectorAll('.js-open-details-pokemon');
 const btnCloseModal = document.querySelector('.js-close-modal-details-pokemon');
 const countPokemons = document.getElementById('js-count-pokemons');
 
+// Adiciona eventos de clique para abrir detalhes do Pokémon
 cardPokemon.forEach(card => {
   card.addEventListener('click', openDetailsPokemon);
 })
-
+// Adiciona um evento de clique para fechar o modal
 if(btnCloseModal) {
   btnCloseModal.addEventListener('click', closeDetailsPokemon);
 }
-
+// Abre e fecha o menu suspenso de seleção
 const btnDropdownSelect = document.querySelector('.js-open-select-custom');
 
 btnDropdownSelect.addEventListener('click', () => {
   btnDropdownSelect.parentElement.classList.toggle('active');
 })
 
+// Seleciona a área onde os cartões de Pokémon serão exibidos
 const areaPokemons = document.getElementById('js-list-pokemons');
 
-
+// Função para deixar a primeira letra de uma string maiúscula
 function primeiraLetraMaiuscula(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function createCardPokemon(code, type, nome, imagePok) {
- let card = document.createElement('button');
- card.classList = `card-pokemon js-open-details-pokemon ${type}`;
- card.setAttribute('code-pokemon', code);
- areaPokemons.appendChild(card);
+ let card = document.createElement('button');  // Cria um botão para o cartão
+ card.classList = `card-pokemon js-open-details-pokemon ${type}`; // Adiciona classes
+ card.setAttribute('code-pokemon', code); // Define um atributo para o código do Pokémon
+ areaPokemons.appendChild(card); // Adiciona o cartão à área de Pokémons
 
  let image = document.createElement('div');
  image.classList = 'image';
@@ -71,6 +73,7 @@ function createCardPokemon(code, type, nome, imagePok) {
   areaIcon.appendChild(imgType);
 }
 
+// Função para listar Pokémons a partir de uma URL da API
 function listingPokemons(urlApi) {
   axios({
     method: 'GET',
@@ -78,9 +81,9 @@ function listingPokemons(urlApi) {
   })
   .then((response) => {
 
-    const { results, next, count } = response.data;
+    const { results, next, count } = response.data; // Extrai os dados da resposta
 
-    countPokemons.innerText = count;
+    countPokemons.innerText = count; // Atualiza o contador de Pokémons
 
     results.forEach(pokemon => {
       let urlApiDetails = pokemon.url;
@@ -101,7 +104,7 @@ function listingPokemons(urlApi) {
 
         createCardPokemon(infoCard.code, infoCard.type, infoCard.nome, infoCard.image);
 
-        const cardPokemon = document.querySelectorAll('.js-open-details-pokemon');
+        const cardPokemon = document.querySelectorAll('.js-open-details-pokemon'); // Seleciona os cartões de Pokémon
 
         cardPokemon.forEach(card => {
           card.addEventListener('click', openDetailsPokemon);
@@ -134,12 +137,12 @@ function openDetailsPokemon() {
   const mainAbilitiesPokemonModal = document.getElementById('js-main-abilities');
   
 
-  imgPokemonModal.setAttribute('src', imagePokemon.getAttribute('src'));
-  modalDetails.setAttribute('type-pokemon-modal', this.classList[2]);
+  imgPokemonModal.setAttribute('src', imagePokemon.getAttribute('src'));  // Define a imagem no modal
+  modalDetails.setAttribute('type-pokemon-modal', this.classList[2]);  // Define o tipo de Pokémon no modal
   iconTypePokemonModal.setAttribute('src', iconTypePokemon.getAttribute('src'));
 
 
-  namePokemonModal.textContent = namePokemon.textContent;
+  namePokemonModal.textContent = namePokemon.textContent;  // Define o nome no modal
   codePokemonModal.textContent = codeStringPokemon.textContent;
 
   axios({
@@ -161,6 +164,7 @@ function openDetailsPokemon() {
       urlType: data.types[0].type.url
     }
 
+    
     function listingTypesPokemon() {
       const areaTypesModal = document.getElementById('js-types-pokemon');
 
@@ -297,7 +301,7 @@ axios({
   })
 })
 
-// aqui é o script que faz a funcionalidade do load more
+// Funcionalidade do botão load more
 const btnLoadMore = document.getElementById('js-btn-load-more');
 
 let countPagination = 10;
@@ -310,7 +314,7 @@ function showMorePokemon() {
 btnLoadMore.addEventListener('click', showMorePokemon);
 
 
-// funcao para filtrar os pokemons por tipo
+// Funcão para filtrar os pokemons por tipo
 function filterByTypes() {
   let idPokemon = this.getAttribute('code-type');
   
@@ -388,7 +392,7 @@ function filterByTypes() {
 }
 
 
-// funcao para buscar pokemon
+// Funcão para buscar pokemon
 const btnSearch = document.getElementById('js-btn-search');
 const inputSearch = document.getElementById('js-input-search');
 
@@ -399,7 +403,6 @@ inputSearch.addEventListener('keyup', (event) => {
     searchPokemon();
   }
 })
-
 
 function searchPokemon() {
   let valueInput = inputSearch.value.toLowerCase();
